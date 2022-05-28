@@ -219,12 +219,9 @@
   <div class="tab-container" tabindex="-1">
     <div class="top">
       <div class="page-button" tabindex="-1" on:click={() => setMonth(month - 1)}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          ><path
-            d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z"
-            transform="rotate(180, 12, 12)"
-          /></svg
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" transform="rotate(180, 12, 12)"/>
+        </svg>
       </div>
       <div class="dropdown month">
         <select bind:value={month} on:keydown={monthKeydown}>
@@ -248,9 +245,9 @@
             <option value={i} selected={i === month}>{monthName}</option>
           {/each}
         </select>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          ><path d="M6 0l12 12-12 12z" transform="rotate(90, 12, 12)" /></svg
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M6 0l12 12-12 12z" transform="rotate(90, 12, 12)" />
+        </svg>
       </div>
       <div class="dropdown year">
         <select bind:value={year} on:keydown={yearKeydown}>
@@ -264,14 +261,14 @@
             <option value={v} selected={v === year}>{v}</option>
           {/each}
         </select>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          ><path d="M6 0l12 12-12 12z" transform="rotate(90, 12, 12)" /></svg
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M6 0l12 12-12 12z" transform="rotate(90, 12, 12)" />
+        </svg>
       </div>
       <div class="page-button" tabindex="-1" on:click={() => setMonth(month + 1)}>
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-          ><path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" /></svg
-        >
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+          <path d="M5 3l3.057-3 11.943 12-11.943 12-3.057-3 9-9z" />
+        </svg>
       </div>
     </div>
     <div class="header">
@@ -312,7 +309,7 @@
     cursor: default
     font-size: 0.75rem
     border: 1px solid rgba(103, 113, 137, 0.3)
-    border-radius: 3px
+    border-radius: 10px
     box-shadow: 0px 2px 6px rgba(#000000,0.08), 0px 2px 6px rgba(#000000,0.11)
     outline: none
     transition: all 80ms cubic-bezier(0.4, 0.0, 0.2, 1)
@@ -321,12 +318,19 @@
       box-shadow: 0px 0px 0px 2px var(--date-picker-highlight-shadow, rgba(#0269f7, 0.4))
   .tab-container
     outline: none
+    background-color: #FFFFFF
   .top
     display: flex
     justify-content: center
     align-items: center
     padding-bottom: 0.5rem
+    background-color: var(--date-picker-selected-background, #FF0040)
+    border-radius: 10px
+    padding-bottom: 0.25rem
+    padding-right: 0.2rem
+    padding-left: 0.2rem
   .dropdown
+    margin-top: 0.25rem
     margin-left: 0.25rem
     margin-right: 0.25rem
     position: relative
@@ -345,14 +349,14 @@
     flex-grow: 1
   svg
     display: block
-    fill: var(--date-picker-foreground, #000000)
-    opacity: 0.75
+    fill: #ffffff
     outline: none
   .page-button
+    margin-top: 0.25rem
     width: 1.5rem
     height: 1.5rem
     flex-shrink: 0
-    border-radius: 5px
+    border-radius: 50%
     box-sizing: border-box
     border: 1px solid transparent
     display: flex
@@ -364,38 +368,43 @@
     svg
       width: 0.68rem
       height: 0.68rem
+      fill: #ffffff
+      opacity: 1
   select.dummy-select
     position: absolute
     width: 100%
     pointer-events: none
+    border: none
     outline: none
-    color: var(--date-picker-foreground, #000000)
-    background-color: var(--date-picker-background, #ffffff)
-    border-radius: 3px
+    color: var(--date-picker-foreground, #ffffff)
+    background-color: transparent
   select:focus + select.dummy-select
-    border-color: var(--date-picker-highlight-border, #0269f7)
-    box-shadow: 0px 0px 0px 2px var(--date-picker-highlight-shadow, rgba(#0269f7, 0.4))
+    outline: none
+    border: none
   select:not(.dummy-select)
-    border-radius: 100px
+    border: none
+    outline: none
   select
     font-size: inherit
     font-family: inherit
     -webkit-appearance: none
     -moz-appearance: none
     appearance: none
+    background-color: transparent
     flex-grow: 1
     padding: 0rem 0.35rem
     height: 1.5rem
     padding-right: 1.3rem
     margin: 0px
-    border: 1px solid rgba(108, 120, 147, 0.3)
     outline: none
+    border: none
     transition: all 80ms cubic-bezier(0.4, 0.0, 0.2, 1)
 
   .header
     display: flex
     font-weight: 600
     padding-bottom: 2px
+    padding-top: 0.5rem
   .header-cell
     width: 1.875rem
     text-align: center
@@ -407,14 +416,12 @@
     display: flex
     align-items: center
     justify-content: center
-    width: 2rem
-    height: 1.94rem
+    width: 1.9rem
+    height: 1.9rem
     flex-grow: 1
-    border-radius: 5px
+    border-radius: 50%
     box-sizing: border-box
-    border: 2px solid transparent
     &:hover
-      border: 1px solid rgba(#808080, 0.08)
       background-color: rgba(#808080, 0.08)
     &.disabled
       visibility: hidden
@@ -424,7 +431,6 @@
     &.other-month span
       opacity: 0.4
     &.selected
-      color: var(--date-picker-selected-color, inherit)
-      background: var(--date-picker-selected-background, rgba(2, 105, 247, 0.2))
-      border: 2px solid var(--date-picker-highlight-border, #0269f7)
+      color: var(--date-picker-selected-color, #FFFFFF)
+      background: var(--date-picker-selected-background, #FF0040)
 </style>
