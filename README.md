@@ -8,6 +8,8 @@
 
 Date and time picker for Svelte
 
+*Edited by Corey Buchanan for use in Priority Master app*
+
 Features:
 - Theming
 - Custom formats

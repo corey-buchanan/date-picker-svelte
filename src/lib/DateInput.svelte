@@ -171,14 +171,12 @@
     box-sizing: border-box
     padding: 4px 6px
     margin: 0px
-    border: 1px solid rgba(103, 113, 137, 0.3)
-    border-radius: 3px
+    border: none
+    font-size: 1.3rem
+    font-family: var(--date-input-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif)
     width: var(--date-input-width, 150px)
     outline: none
     transition: all 80ms cubic-bezier(0.4, 0.0, 0.2, 1)
-    &:focus
-      border-color: var(--date-picker-highlight-border, #0269f7)
-      box-shadow: 0px 0px 0px 2px var(--date-picker-highlight-shadow, rgba(#0269f7, 0.4))
   .invalid
     border: 1px solid rgba(#f92f72, 0.5)
     background-color: rgba(#f92f72, 0.1)

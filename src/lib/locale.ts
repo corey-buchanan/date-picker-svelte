@@ -10,7 +10,7 @@ type InnerLocale = {
 }
 export function getLocaleDefaults(): InnerLocale {
   return {
-    weekdays: ['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'],
+    weekdays: ['S', 'M', 'T', 'W', 'T', 'F', 'S'],
     months: [
       'January',
       'February',
@@ -25,7 +25,7 @@ export function getLocaleDefaults(): InnerLocale {
       'November',
       'December',
     ],
-    weekStartsOn: 1,
+    weekStartsOn: 0,
   }
 }
 export function getInnerLocale(locale: Locale = {}): InnerLocale {
