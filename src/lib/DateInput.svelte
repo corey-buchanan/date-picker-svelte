@@ -172,7 +172,7 @@
     padding: 4px 6px
     margin: 0px
     border: none
-    font-size: 1.3rem
+    font-size: var(--date-input-font-size, 1.0rem)
     font-family: var(--date-input-font, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif)
     width: var(--date-input-width, 150px)
     outline: none

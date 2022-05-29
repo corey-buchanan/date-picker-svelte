@@ -8,7 +8,12 @@
 
 Date and time picker for Svelte
 
-*Edited by Corey Buchanan for use in Priority Master app*
+*Forked by Corey Buchanan for use in Priority Beast app*
+
+Changes:
+- Updates to styling
+- Added styling variable '--date-input-font'
+- Added styling variable '--date-input-font-size'
 
 Features:
 - Theming
